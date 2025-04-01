@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau Dashboard</title>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
         }
-        iframe {
+        #vizContainer {
             width: 90%;
             height: 600px;
-            border: none;
+            margin: auto;
         }
     </style>
 </head>
 <body>
     <h1>Tableau Dashboard</h1>
-    <iframe src="https://public.tableau.com/views/salesyanai/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
+    <div id="vizContainer"></div>
+
+    <script>
+        let viz;
+        function initViz() {
+            let containerDiv = document.getElementById("vizContainer");
+            let url = "https://public.tableau.com/views/salesyanai/Dashboard1";
+            let options = {
+                width: "100%",
+                height: "600px"
+            };
+            viz = new tableau.Viz(containerDiv, url, options);
+        }
+        window.onload = initViz;
+    </script>
 </body>
 </html>
