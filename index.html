@@ -17,7 +17,8 @@
             color: #333;
         }
         .tableau-container {
-            max-width: 1000px;
+            max-width: 100%;
+            height: auto;
             margin: 0 auto;
         }
     </style>
@@ -26,12 +27,8 @@
     <h1>לוח נתוני מכירות</h1>
     <p>להלן לוח הבקרה ממקור Tableau Public:</p>
     <div class="tableau-container">
-        <iframe 
-            src="https://public.tableau.com/views/salesyanai/Dashboard1?:language=en-US&:embed=y&:display_count=n&:origin=viz_share_link" 
-            width="1000" 
-            height="800" 
-            frameborder="0">
-        </iframe>
-    </div>
-</body>
-</html>
+        <div id="tableauViz"></div>
+        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+        <script type="text/javascript">
+            function initViz() {
+                var containerDiv
